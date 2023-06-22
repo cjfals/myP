@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+	<mapper namespace="com.itwillbs.mapper.memberMapper">
+	
+	<select id="idCheck" resultType="Integer">
+		select m_num from member
+		where m_id = #{m_id}
+	</select>
+	
+	<insert id="insertM">
+		insert into member(m_id, m_pass, m_name)
+		values(#{m_id}, #{m_pass}, #{m_name})
+	</insert>
+	
+
+</mapper>

@@ -13,10 +13,67 @@
 		<title>Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/resources/assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			function idCheck() {
+					$.ajax({
+						url:"/member/idCheck",
+						data:{
+							m_id: $('#m_id').val()
+						},
+						success:function(data){
+							if($('#m_id').val().length > 0){
+								if(data > 0){
+									$('#idOk').css("display", "none");
+									$('#idNo').css("display", "inline-block");
+									
+								}else{
+									$('#idNo').css("display", "none");
+									$('#idOk').css("display", "inline-block");
+								}
+							}else{
+								$('#idOk').css("display", "none");
+								$('#idNo').css("display", "none");
+							}
+							
+						}
+						
+					});
+			}
+			
+			function pwCheck() {
+				var pw1 = $('#m_pass').val();
+				var pw2 = $('#m_passConfirm').val();
+				
+				if(pw1 == pw2){
+					$('#pwOk').css("display", "inline-block");
+					$('#pwNo').css("display", "none");
+				}else{
+					$('#pwOk').css("display", "none");
+					$('#pwNo').css("display", "inline-block");
+				}
+			}
+			
+			$(document).ready(function(){
+				$('#demo-human').click(function(){
+					alert('dd');
+				});
+				
+				
+				$('#insertSubmit').submit(function(){
+					if($('#idNo').css('display') == 'inline-block' || $('#pwNo').css('display') == 'inline-block'){
+						alert('아이디 또는 비밀번호 확인');
+						return false;
+					}
+				});
+				
+			});
+		</script>
+		
+		
+		
 	</head>
 	<body>
 
@@ -41,77 +98,53 @@
 
 							<!-- Banner -->
 								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="/board/write" class="button big">글 쓰기</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="/resources/images/pic10.jpg" alt="" />
-									</span>
+									<form method="post" action="/member/insertM" id='insertSubmit'>
+														<div class="row uniform">
+															<div class="6u 12u$(xsmall)">
+																<input type="text" name="m_id" id="m_id" placeholder="id" required oninput="idCheck();">
+															</div>
+															<div class="6u 12u$(xsmall)">
+																<input type="text" name="idOk" id="idOk" value="사용가능" Style="display: none;" readonly="readonly">
+																<input type="text" name="idNo" id="idNo" value="중복된 아이디" Style="display: none;" readonly="readonly">
+															</div>
+															
+															<div class="6u 12u$(xsmall)">
+																<input type="text" name="m_name" id="m_name" required placeholder="name">
+															</div>
+															
+															<div class="6u$ 12u$(xsmall)">
+																<input type="password" id="m_pass" required placeholder="password">
+															</div>
+															<div class="6u$ 12u$(xsmall)">
+																<input type="password" name="m_pass" id="m_passConfirm" required placeholder="password confirm" oninput="pwCheck();">
+															</div>
+															<div class="6u 12u$(xsmall)">
+																<input type="text" name="pwOk" id="pwOk" value="비밀번호 일치" Style="display: none;" readonly="readonly">
+																<input type="text" name="pwNo" id="pwNo" value="비밀번호가 다릅니다" Style="display: none;" readonly="readonly">
+															</div>
+															
+															<div class="6u$ 12u$(small)">
+																<input type="checkbox" id="demo-human" name="demo-human">
+																<label for="demo-human">I am a human</label>
+															</div>
+															<!-- Break -->
+															<div class="12u$">
+																<ul class="actions">
+																	<li><input type="submit" value="회원가입" class="special"></li>
+																	<li><input type="reset" value="초기화"></li>
+																</ul>
+															</div>
+														</div>
+													</form>
 								</section>
 
 							<!-- Section -->
 								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-diamond"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
+									
 								</section>
 
 							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-									<c:forEach items="${List }" var="list">
-										<article>
-											<h3>${list.title }</h3>
-											<p>${list.content }</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</c:forEach>
-										
-									</div>
-								</section>
+								
 
 						</div>
 					</div>

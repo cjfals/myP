@@ -41,25 +41,52 @@
 
 							<!-- Banner -->
 								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="/board/write" class="button big">글 쓰기</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="/resources/images/pic10.jpg" alt="" />
-									</span>
+									<form method="post" action="#">
+														<div class="row uniform">
+															<div class="6u 12u$(xsmall)">
+																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name">
+															</div>
+															<div class="6u$ 12u$(xsmall)">
+																<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email">
+															</div>
+															
+															<!-- Break -->
+															<div class="4u 12u$(small)">
+																<input type="radio" id="demo-priority-low" name="demo-priority" checked="">
+																<label for="demo-priority-low">Low</label>
+															</div>
+															<div class="4u 12u$(small)">
+																<input type="radio" id="demo-priority-normal" name="demo-priority">
+																<label for="demo-priority-normal">Normal</label>
+															</div>
+															<div class="4u$ 12u$(small)">
+																<input type="radio" id="demo-priority-high" name="demo-priority">
+																<label for="demo-priority-high">High</label>
+															</div>
+															
+															
+															<!-- Break -->
+															<div class="12u$">
+																<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+															</div>
+															<div class="6u$ 12u$(small)">
+																<input type="checkbox" id="demo-human" name="demo-human">
+																<label for="demo-human">I am a human</label>
+															</div>
+															<!-- Break -->
+															<div class="12u$">
+																<ul class="actions">
+																	<li><input type="submit" value="Send Message" class="special"></li>
+																	<li><input type="reset" value="Reset"></li>
+																</ul>
+															</div>
+														</div>
+													</form>
 								</section>
 
 							<!-- Section -->
 								<section>
-									<header class="major">
+									<!-- <header class="major">
 										<h2>Erat lacinia</h2>
 									</header>
 									<div class="features">
@@ -91,27 +118,11 @@
 												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											</div>
 										</article>
-									</div>
+									</div> -->
 								</section>
 
 							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-									<c:forEach items="${List }" var="list">
-										<article>
-											<h3>${list.title }</h3>
-											<p>${list.content }</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</c:forEach>
-										
-									</div>
-								</section>
+								
 
 						</div>
 					</div>

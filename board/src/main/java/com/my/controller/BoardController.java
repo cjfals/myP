@@ -19,8 +19,12 @@ public class BoardController {
 	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public String ListGET(Model model) throws Exception {
 		model.addAttribute("List", service.BoardList());
-		System.out.println(service.BoardList());
 		return "/board/boardList";
+	}
+	
+	@RequestMapping(value = "write", method = RequestMethod.GET)
+	public void writeGET() {
+		
 	}
 
 }

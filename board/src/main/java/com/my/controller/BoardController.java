@@ -16,13 +16,13 @@ public class BoardController {
 	@Inject
 	private BoardService service;
 	
-	@RequestMapping(value = "list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String ListGET(Model model) throws Exception {
 		model.addAttribute("List", service.BoardList());
 		return "/board/boardList";
 	}
 	
-	@RequestMapping(value = "write", method = RequestMethod.GET)
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void writeGET() {
 		
 	}

@@ -16,5 +16,10 @@
 		values(#{m_id}, #{m_pass}, #{m_name})
 	</insert>
 	
+	<select id="loginM" resultType="String">
+		select * from member
+		where m_id = #{m_id} and m_pass = #{m_pass}
+	</select>
+	
 
 </mapper>

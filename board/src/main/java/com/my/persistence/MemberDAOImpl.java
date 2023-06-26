@@ -25,6 +25,14 @@ public class MemberDAOImpl implements MemberDAO {
 	public void insertM(MemberVO vo) throws Exception {
 		sqlSession.insert(NAMESPACE+".insertM", vo);
 	}
+
+	@Override
+	public String loginM(MemberVO vo) throws Exception {
+		
+		return sqlSession.selectOne(NAMESPACE+".loginM", vo);
+	}
+	
+	
 	
 
 }

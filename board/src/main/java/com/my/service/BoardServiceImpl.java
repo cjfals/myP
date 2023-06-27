@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.my.domain.BoardVO;
+import com.my.domain.SportsVO;
 import com.my.persistence.BoardDAO;
 
 @Service
@@ -18,6 +19,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> BoardList() throws Exception {
 		return dao.BoardList();
+	}
+
+	@Override
+	public void writeS(SportsVO vo) throws Exception {
+		dao.writeS(vo);
+	}
+
+	@Override
+	public List<SportsVO> sportsList() throws Exception {
+		return dao.SportsList();
 	}
 
 }

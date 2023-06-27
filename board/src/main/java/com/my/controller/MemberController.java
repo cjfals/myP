@@ -1,6 +1,7 @@
 package com.my.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -38,16 +39,19 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/loginM", method = RequestMethod.GET)
-	public void loginMGET() {
-		
+	public void loginMGET(HttpServletRequest request) {
+		String uri = request.getHeader("Referer");
+	    if (uri != null && !uri.contains("/login")) {
+	        request.getSession().setAttribute("prevPage", uri);
+	    }
 	}
 	
 	@RequestMapping(value = "/loginM", method = RequestMethod.POST)
-	public String loginMPOST(MemberVO vo, Model model, HttpSession session) throws Exception {
-		
+	public String loginMPOST(MemberVO vo, Model model, HttpSession session, HttpServletRequest request) throws Exception {
+		String prev = (String) request.getSession().getAttribute("prevPage");
 		if(service.loginM(vo) != null) {
 			session.setAttribute("id", vo.getM_id());
-			return "redirect:/home";
+			return "redirect:"+prev;
 		} else {
 			model.addAttribute("error", "error");
 			return "/member/loginM";
@@ -56,9 +60,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/logoutM", method = RequestMethod.GET)
-	public String logoutGET(HttpSession session) {
+	public String logoutGET(HttpSession session, HttpServletRequest request) {
 		session.invalidate();
-		return "/home";
+		String uri = request.getHeader("Referer");
+		return "redirect:"+uri;
 	}
 	
 	

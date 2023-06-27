@@ -9,5 +9,14 @@
 	<select id="boardList" resultType="com.my.domain.BoardVO">
 		select * from board
 	</select>
+	
+	<insert id="writeS">
+		insert into sports(writer, title, content, category, grade, division)
+		values(#{writer}, #{title}, #{content}, #{category}, #{grade}, #{division})
+	</insert>
+	
+	<select id="sportsList" resultType="com.my.domain.SportsVO">
+		select * from sports
+	</select>
 
 </mapper>

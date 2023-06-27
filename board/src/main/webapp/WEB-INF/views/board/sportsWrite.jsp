@@ -29,43 +29,56 @@
 							<%@ include file="../include/header.jsp" %>
 							<!-- Banner -->
 								<section id="banner">
-									<form method="post" action="#">
+									<form method="post" action="/board/sportsWrite">
 														<div class="row uniform">
 															<div class="6u 12u$(xsmall)">
-																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name">
+																<input type="text" name="title" id="title" value="" placeholder="제목">
 															</div>
-															<div class="6u$ 12u$(xsmall)">
-																<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email">
+															<div class="col-12u$(xsmall)">
+																<select name="category" id="category">
+																	<option value="">- 종목을 선택하세요 -</option>
+																	<option value="soccer">축구</option>
+																	<option value="baseball">야구</option>
+																	<option value="basketball">농구</option>
+																</select>
 															</div>
 															
 															<!-- Break -->
 															<div class="4u 12u$(small)">
-																<input type="radio" id="demo-priority-low" name="demo-priority" checked="">
-																<label for="demo-priority-low">Low</label>
+																<input type="radio" value="low" id="low" name="grade" checked>
+																<label for="low">입문</label>
 															</div>
 															<div class="4u 12u$(small)">
-																<input type="radio" id="demo-priority-normal" name="demo-priority">
-																<label for="demo-priority-normal">Normal</label>
+																<input type="radio" value="normal" id="normal" name="grade">
+																<label for="normal">보통</label>
 															</div>
 															<div class="4u$ 12u$(small)">
-																<input type="radio" id="demo-priority-high" name="demo-priority">
-																<label for="demo-priority-high">High</label>
+																<input type="radio" value="high" id="high" name="grade">
+																<label for="high">잘함</label>
 															</div>
-															
 															
 															<!-- Break -->
 															<div class="12u$">
-																<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+																<textarea name="content" id="content" placeholder="Enter your message" rows="6"></textarea>
 															</div>
-															<div class="6u$ 12u$(small)">
-																<input type="checkbox" id="demo-human" name="demo-human">
-																<label for="demo-human">I am a human</label>
+															
+															<div class="4u 12u$(small)">
+																<input type="radio" value="team" id="team" name="division" checked>
+																<label for="team">팀 찾음</label>
+															</div>
+															<div class="4u 12u$(small)">
+																<input type="radio" value="member" id="member" name="division">
+																<label for="member">팀원 찾음</label>
+															</div>
+															<div class="4u$ 12u$(small)">
+																<input type="radio" value="opponent" id="opponent" name="division">
+																<label for="opponent">경기 상대 찾음</label>
 															</div>
 															<!-- Break -->
 															<div class="12u$">
 																<ul class="actions">
-																	<li><input type="submit" value="Send Message" class="special"></li>
-																	<li><input type="reset" value="Reset"></li>
+																	<li><input type="submit" value="작성" class="special"></li>
+																	<li><input type="reset" value="초기화"></li>
 																</ul>
 															</div>
 														</div>

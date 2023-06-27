@@ -17,6 +17,29 @@
 		<link rel="stylesheet" href="/resources/assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#write').click(function(){
+					if(${id == null}){
+						if(confirm('로그인이 필요합니다 로그인 페이지로 이동하시겠습니까?')){
+							location.href='/member/loginM';
+							return false;
+						}else{
+							return false;
+						}
+					}
+				});
+			});
+			
+		
+		
+		</script>
+		
+		
+		
 	</head>
 	<body>
 
@@ -37,11 +60,11 @@
 										</header>
 										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										<ul class="actions">
-											<li><a href="/board/write" class="button big">글 쓰기</a></li>
+											<li><a href="/board/sportsWrite" class="button big" id="write">글 쓰기</a></li>
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="/resources/images/pic10.jpg" alt="" />
+										<img src="/resources/images/124346988.png" alt="" />
 									</span>
 								</section>
 

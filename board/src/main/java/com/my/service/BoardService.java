@@ -3,8 +3,13 @@ package com.my.service;
 import java.util.List;
 
 import com.my.domain.BoardVO;
+import com.my.domain.SportsVO;
 
 public interface BoardService {
 	public List<BoardVO> BoardList() throws Exception;
+	
+	public void writeS(SportsVO vo) throws Exception;
+	
+	public List<SportsVO> sportsList() throws Exception;
 
 }

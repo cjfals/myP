@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.my.domain.MemberVO;
+import com.my.domain.SportsVO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -31,6 +32,7 @@ public class MemberDAOImpl implements MemberDAO {
 		
 		return sqlSession.selectOne(NAMESPACE+".loginM", vo);
 	}
+
 	
 	
 	

@@ -17,6 +17,25 @@
 		<link rel="stylesheet" href="/resources/assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#write').click(function(){
+					if(${id == null}){
+						if(confirm('로그인이 필요합니다 로그인 페이지로 이동하시겠습니까?')){
+							location.href='/member/loginM';
+							return false;
+						}else{
+							return false;
+						}
+					}
+				});
+			});
+			
+		</script>
+		
+		
 	</head>
 	<body>
 
@@ -37,7 +56,7 @@
 										</header>
 										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										<ul class="actions">
-											<li><a href="/board/write" class="button big">글 쓰기</a></li>
+											<li><a href="/board/sportsWrite" class="button big" id="write">글 쓰기</a></li>
 										</ul>
 									</div>
 									<span class="image object">
@@ -47,59 +66,35 @@
 
 							<!-- Section -->
 								<section>
-									<header class="major">
-										<h2>Erat lacinia</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-diamond"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-									</div>
+									<div class="table-wrapper">
+														<table>
+															<thead>
+																<tr>
+																	<th>구분</th>
+																	<th>제목</th>
+																	<th>작성자</th>
+																	<th>작성일</th>
+																	<th>조회수</th>
+																</tr>
+															</thead>
+															<tbody>
+															
+															<c:forEach items="${list }" var="list">
+																<tr>
+																	<td>${list.division }</td>
+																	<td>${list.title }</td>
+																	<td>${list.writer }</td>
+																	<td>${list.date }</td>
+																	<td>${list.count }</td>
+																</tr>
+															</c:forEach>
+																
+															</tbody>
+															
+														</table>
+													</div>
 								</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-									<c:forEach items="${List }" var="list">
-										<article>
-											<h3>${list.title }</h3>
-											<p>${list.content }</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</c:forEach>
-										
-									</div>
-								</section>
 
 						</div>
 					</div>

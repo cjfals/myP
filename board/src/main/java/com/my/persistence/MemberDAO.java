@@ -8,5 +8,5 @@ public interface MemberDAO {
 	public void insertM(MemberVO vo) throws Exception;
 	
 	public String loginM(MemberVO vo) throws Exception;
-
+	
 }

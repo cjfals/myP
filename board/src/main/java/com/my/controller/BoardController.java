@@ -18,6 +18,7 @@ public class BoardController {
 	@Inject
 	private BoardService service;
 	
+	
 	@RequestMapping(value = "/sportsList", method = RequestMethod.GET)
 	public String ListGET(Model model) throws Exception {
 		model.addAttribute("list", service.sportsList());

@@ -33,6 +33,16 @@ public class BoardDAOImpl implements BoardDAO {
 	public List<SportsVO> SportsList() throws Exception {
 		return sqlSession.selectList(NAMESPACE+".sportsList");
 	}
+
+	@Override
+	public SportsVO SportsDetail(int s_num) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+".sportsDetail", s_num);
+	}
+
+	@Override
+	public void viewCountUp(int s_num) throws Exception {
+		sqlSession.update(NAMESPACE+".viewCountUp", s_num);
+	}
 	
 
 }

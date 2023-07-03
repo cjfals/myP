@@ -9,6 +9,7 @@
 										<li><a href="/member/loginM"><span class="label">로그인</span></a></li>
 									</c:if>
 									<c:if test="${id != null }">
+										${id }님
 										<li><a href="/member/logoutM"><span class="label">로그아웃</span></a></li>
 									</c:if>
 									</ul>

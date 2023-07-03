@@ -31,4 +31,14 @@ public class BoardServiceImpl implements BoardService {
 		return dao.SportsList();
 	}
 
+	@Override
+	public SportsVO sportsDetail(int s_num) throws Exception {
+		return dao.SportsDetail(s_num);
+	}
+
+	@Override
+	public void viewCountUp(int s_num) throws Exception {
+		dao.viewCountUp(s_num);
+	}
+
 }

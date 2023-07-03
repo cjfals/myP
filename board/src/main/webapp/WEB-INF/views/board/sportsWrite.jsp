@@ -37,23 +37,23 @@
 															<div class="col-12u$(xsmall)">
 																<select name="category" id="category">
 																	<option value="">- 종목을 선택하세요 -</option>
-																	<option value="soccer">축구</option>
-																	<option value="baseball">야구</option>
-																	<option value="basketball">농구</option>
+																	<option value="축구">축구</option>
+																	<option value="야구">야구</option>
+																	<option value="농구">농구</option>
 																</select>
 															</div>
 															
 															<!-- Break -->
 															<div class="4u 12u$(small)">
-																<input type="radio" value="low" id="low" name="grade" checked>
+																<input type="radio" value="입문" id="low" name="grade" checked>
 																<label for="low">입문</label>
 															</div>
 															<div class="4u 12u$(small)">
-																<input type="radio" value="normal" id="normal" name="grade">
+																<input type="radio" value="보통" id="normal" name="grade">
 																<label for="normal">보통</label>
 															</div>
 															<div class="4u$ 12u$(small)">
-																<input type="radio" value="high" id="high" name="grade">
+																<input type="radio" value="잘함" id="high" name="grade">
 																<label for="high">잘함</label>
 															</div>
 															
@@ -63,15 +63,15 @@
 															</div>
 															
 															<div class="4u 12u$(small)">
-																<input type="radio" value="team" id="team" name="division" checked>
+																<input type="radio" value="팀 찾음" id="team" name="division" checked>
 																<label for="team">팀 찾음</label>
 															</div>
 															<div class="4u 12u$(small)">
-																<input type="radio" value="member" id="member" name="division">
+																<input type="radio" value="팀원 찾음" id="member" name="division">
 																<label for="member">팀원 찾음</label>
 															</div>
 															<div class="4u$ 12u$(small)">
-																<input type="radio" value="opponent" id="opponent" name="division">
+																<input type="radio" value="경기 상대 찾음" id="opponent" name="division">
 																<label for="opponent">경기 상대 찾음</label>
 															</div>
 															<!-- Break -->

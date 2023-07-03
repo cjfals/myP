@@ -81,8 +81,8 @@
 															
 															<c:forEach items="${list }" var="list">
 																<tr>
-																	<td>${list.division }</td>
-																	<td>${list.title }</td>
+																	<td>[${list.category }]${list.division }</td>
+																	<td><a href="/board/sportsDetail?s_num=${list.s_num }">${list.title }</a></td>
 																	<td>${list.writer }</td>
 																	<td>${list.date }</td>
 																	<td>${list.count }</td>

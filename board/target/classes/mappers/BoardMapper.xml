@@ -18,5 +18,15 @@
 	<select id="sportsList" resultType="com.my.domain.SportsVO">
 		select * from sports
 	</select>
+	
+	<select id="sportsDetail" resultType="com.my.domain.SportsVO">
+		select * from sports
+		where s_num = #{s_num}
+	</select>
+	
+	<update id="viewCountUp">
+		update sports set count = count + 1
+		where s_num = #{s_num}
+	</update>
 
 </mapper>

@@ -17,6 +17,17 @@
 		<link rel="stylesheet" href="/resources/assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+		<script>
+			function Delete(){
+				if(confirm('삭제 하시겠습니까')){
+					document.getElementById('form').submit();
+				}else{
+					return false;
+				}
+			}
+		</script>
+		
 	</head>
 	<body>
 
@@ -29,7 +40,8 @@
 							<%@ include file="../include/header.jsp" %>
 							<!-- Banner -->
 								<section id="banner">
-									<form method="post" action="/board/sportsWrite">
+									<form method="post" action="/board/sportsDelete" id="form">
+										<input type="hidden" name="s_num" value="${detail.s_num }">
 														<div class="row uniform">
 															<div class="6u 12u$(xsmall)">
 																<input type="text" name="title" id="title" value="${detail.title }" readonly>
@@ -69,7 +81,7 @@
 																<ul class="actions" style="float:right">
 																	<c:if test="${id eq detail.writer }">
 																		<li><input type="button" value="수정" onclick="location.href='/board/sportsUpdate?s_num=${detail.s_num}'"></li>
-																		<li><input type="button" value="삭제" onclick="location.href='/board/sportsList'"></li>
+																		<li><input type="button" value="삭제" onclick="Delete();"></li>
 																	</c:if>
 																	<li><input type="button" value="목록" onclick="location.href='/board/sportsList'"></li>
 																</ul>

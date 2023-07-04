@@ -41,4 +41,14 @@ public class BoardServiceImpl implements BoardService {
 		dao.viewCountUp(s_num);
 	}
 
+	@Override
+	public void sportsUpdate(SportsVO vo) throws Exception {
+		dao.sportsUpdate(vo);
+	}
+
+	@Override
+	public void sportsDelete(Integer s_num) throws Exception {
+		dao.sportsDelete(s_num);
+	}
+
 }

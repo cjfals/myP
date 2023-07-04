@@ -50,9 +50,8 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
+											<h1>스포츠 게시판</h1>
+											<p>팀, 팀원, 상대팀 매칭</p>
 										</header>
 										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										<ul class="actions">
@@ -60,7 +59,7 @@
 										</ul>
 									</div>
 									<span class="image object">
-										<img src="/resources/images/pic10.jpg" alt="" />
+										<img src="/resources/images/124346988.png" alt="" />
 									</span>
 								</section>
 

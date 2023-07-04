@@ -15,5 +15,9 @@ public interface BoardService {
 	public SportsVO sportsDetail(int s_num) throws Exception;
 	
 	public void viewCountUp(int s_num) throws Exception;
+	
+	public void sportsUpdate(SportsVO vo) throws Exception;
+	
+	public void sportsDelete(Integer s_num) throws Exception;
 
 }

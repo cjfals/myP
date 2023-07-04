@@ -15,5 +15,9 @@ public interface BoardDAO {
 	public SportsVO SportsDetail(int s_num) throws Exception;
 	
 	public void viewCountUp(int s_num) throws Exception;
+	
+	public void sportsUpdate(SportsVO vo) throws Exception;
+	
+	public void sportsDelete(Integer s_num) throws Exception;
 
 }

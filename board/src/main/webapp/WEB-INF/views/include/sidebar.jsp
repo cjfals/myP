@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -15,9 +17,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="/home">홈</a></li>
+										<li><a href="/board/sportsList">스포츠 게시판</a></li>
+										<li><a href="elements.html">중고(x)</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>

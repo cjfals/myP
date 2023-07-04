@@ -28,5 +28,31 @@
 		update sports set count = count + 1
 		where s_num = #{s_num}
 	</update>
+	
+	<update id="sportsUpdate">
+		update sports set title = #{title}, category = #{category}, grade = #{grade}, content = #{content}
+		where s_num = #{s_num}
+	</update>
+	
+	<delete id="sportsDelete">
+		delete from sports
+		where s_num = #{s_num}
+	</delete>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -43,6 +43,16 @@ public class BoardDAOImpl implements BoardDAO {
 	public void viewCountUp(int s_num) throws Exception {
 		sqlSession.update(NAMESPACE+".viewCountUp", s_num);
 	}
+
+	@Override
+	public void sportsUpdate(SportsVO vo) throws Exception {
+		sqlSession.update(NAMESPACE+".sportsUpdate", vo);
+	}
+
+	@Override
+	public void sportsDelete(Integer s_num) throws Exception {
+		sqlSession.delete(NAMESPACE+".sportsDelete", s_num);
+	}
 	
 
 }

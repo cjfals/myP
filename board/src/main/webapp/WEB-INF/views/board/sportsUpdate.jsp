@@ -58,7 +58,8 @@
 							<%@ include file="../include/header.jsp" %>
 							<!-- Banner -->
 								<section id="banner">
-									<form method="post" action="/board/sportsWrite">
+									<form method="post" action="/board/sportsUpdate">
+										<input type="hidden" name="s_num" value="${detail.s_num }">
 														<div class="row uniform">
 															<div class="6u 12u$(xsmall)">
 																<input type="text" name="title" id="title" value="${detail.title }">
@@ -93,9 +94,8 @@
 															
 															<!-- Break -->
 															<div class="12u$">
-																<ul class="actions">
+																<ul class="actions" style="float:right;">
 																	<li><input type="submit" value="수정" class="special"></li>
-																	<li><input type="reset" value="초기화"></li>
 																</ul>
 															</div>
 														</div>

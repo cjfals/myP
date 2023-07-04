@@ -78,6 +78,20 @@ public class BoardController {
 	public void sportsUpdateGET(Integer s_num, Model model) throws Exception{
 		model.addAttribute("detail", service.sportsDetail(s_num));
 	}
+	
+	@RequestMapping(value = "/sportsUpdate", method = RequestMethod.POST)
+	public String sportsUpdatePOST(SportsVO vo, Model model) throws Exception {
+		System.out.println(vo);
+		service.sportsUpdate(vo);
+		model.addAttribute("s_num", vo.getS_num());
+		return "redirect:/board/sportsDetail";
+	}
+	
+	@RequestMapping(value = "/sportsDelete", method = RequestMethod.POST)
+	public String sportsDeletePOST(Integer s_num) throws Exception {
+		service.sportsDelete(s_num);
+		return "redirect:/board/sportsList";
+	}
 
 }
 

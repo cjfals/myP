@@ -17,6 +17,30 @@
 	
 	<select id="sportsList" resultType="com.my.domain.SportsVO">
 		select * from sports
+		where category = #{category} and division = #{division}
+		limit #{pageStart},#{pageSize}
+	</select>
+	
+	<select id="sportsListCate" resultType="com.my.domain.SportsVO">
+		select * from sports
+		where category = #{category}
+		limit #{pageStart},#{pageSize}
+	</select>
+	
+	<select id="sportsListDiv" resultType="com.my.domain.SportsVO">
+		select * from sports
+		where division = #{division}
+		limit #{pageStart},#{pageSize}
+	</select>
+	
+	<select id="sportsListALL" resultType="com.my.domain.SportsVO">
+		select * from sports
+		limit #{pageStart},#{pageSize}
+	</select>
+	
+	<select id="countSportsList" resultType="Integer">
+		select count(s_num)
+		from sports
 	</select>
 	
 	<select id="sportsDetail" resultType="com.my.domain.SportsVO">

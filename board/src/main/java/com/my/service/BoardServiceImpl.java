@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.my.domain.BoardVO;
+import com.my.domain.Criteria;
 import com.my.domain.SportsVO;
 import com.my.persistence.BoardDAO;
 
@@ -17,8 +18,8 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO dao;
 
 	@Override
-	public List<BoardVO> BoardList() throws Exception {
-		return dao.BoardList();
+	public List<BoardVO> BoardList(Criteria cri) throws Exception {
+		return dao.BoardList(cri);
 	}
 
 	@Override
@@ -27,8 +28,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<SportsVO> sportsList() throws Exception {
-		return dao.SportsList();
+	public List<SportsVO> sportsList(Criteria cri, String category, String division) throws Exception {
+		return dao.SportsList(cri, category, division);
 	}
 
 	@Override
@@ -49,6 +50,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void sportsDelete(Integer s_num) throws Exception {
 		dao.sportsDelete(s_num);
+	}
+
+	@Override
+	public Integer countSportsList() throws Exception {
+		return dao.countSportsList();
 	}
 
 }

@@ -10,7 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.my.domain.Criteria;
+import com.my.domain.PageDTO;
 import com.my.domain.SportsVO;
 import com.my.service.BoardService;
 
@@ -23,8 +26,14 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/sportsList", method = RequestMethod.GET)
-	public String ListGET(Model model) throws Exception {
-		model.addAttribute("list", service.sportsList());
+	public String ListGET(Model model, Criteria cri, @RequestParam(value = "category", required = false) String category,
+			@RequestParam(value = "division", required = false) String division) throws Exception {
+		model.addAttribute("list", service.sportsList(cri, category, division));
+		PageDTO dto = new PageDTO();
+		dto.setCri(cri);
+		dto.setTotalCount(service.countSportsList());
+		model.addAttribute("pageDTO", dto);
+		
 		return "/board/sportsList";
 	}
 	

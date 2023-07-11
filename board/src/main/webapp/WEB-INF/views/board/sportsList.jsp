@@ -31,6 +31,16 @@
 						}
 					}
 				});
+				
+				$('#category').change(function(){
+					location.href = '/board/sportsList?category='+this.value;
+				});
+				
+				$('#division').change(function(){
+					location.href = '/board/sportsList?division='+this.value;
+				});
+				
+				
 			});
 			
 		</script>
@@ -65,6 +75,18 @@
 
 							<!-- Section -->
 								<section>
+										<select name="category" id="category" class="button" style="width:200px">
+											<option value="">- 종목 -</option>
+											<option value="축구" >축구</option>
+											<option value="야구">야구</option>
+											<option value="농구">농구</option>
+										</select>
+										<select name="division" id="division" class="button" style="width:200px">
+											<option value="">- 분류 -</option>
+											<option value="팀 찾음">팀 찾음</option>
+											<option value="팀원 찾음">팀원 찾음</option>
+											<option value="경기상대 찾음">경기상대 찾음</option>
+										</select>
 									<div class="table-wrapper">
 														<table>
 															<thead>
@@ -91,6 +113,31 @@
 															</tbody>
 															
 														</table>
+									<ul class="pagination" style="text-align: center;">
+										<c:if test="${pageDTO.prev == true }">
+											<li><a href="/board/sportsList?page=${pageDTO.cri.page - 1}" class="button">Prev</a></li>
+										</c:if>
+										<c:if test="${pageDTO.prev == false }">
+											<li><a href="/board/sportsList?page=${pageDTO.cri.page - 1}" class="button disabled ">Prev</a></li>
+										</c:if>
+										<c:forEach begin="${pageDTO.startPage }" end="${pageDTO.endPage }" var="i">
+										
+											<c:if test="${pageDTO.cri.page == i}">
+												<li><a href="/board/sportsList?page=${i }" class="page active">${i }</a></li>
+											</c:if>
+											<c:if test="${pageDTO.cri.page != i}">
+												<li class="page"><a href="/board/sportsList?page=${i }">${i }</a></li>
+											</c:if>
+											
+										</c:forEach>
+			
+										<c:if test="${pageDTO.next == true }">
+											<li><a href="/board/sportsList?page=${pageDTO.cri.page + 1 }" class="button">Next</a></li>
+										</c:if>
+										<c:if test="${pageDTO.next == false }">
+											<li><a href="/board/sportsList?page=${pageDTO.cri.page + 1 }" class="button disabled">Next</a></li>
+										</c:if>
+									</ul>
 													</div>
 								</section>
 
